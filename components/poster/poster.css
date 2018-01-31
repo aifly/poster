@@ -1,0 +1,163 @@
+/*.ant-btn:focus, .ant-btn:hover,.ant-input:focus, .ant-input:hover {
+    background-color: #fff;
+    border-color: #bf1616;
+    box-shadow: 0 0 0 2px rgba(191, 22, 22, 0.1);
+}*/
+.lt-full {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+.zmiti-text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis; }
+
+.zmiti-play {
+  width: .8rem;
+  height: .8rem;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 1000;
+  right: .5rem;
+  top: .5rem; }
+  .zmiti-play.rotate {
+    -webkit-animation: rotate 5s linear infinite;
+    animation: rotate 5s linear infinite; }
+
+@-webkit-keyframes rotate {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+.zmiti-poster-main-ui {
+  z-index: 20; }
+  .zmiti-poster-main-ui .zmiti-logo {
+    position: absolute;
+    width: 2.5rem;
+    left: .5rem;
+    top: .3rem;
+    z-index: 10;
+    font-size: 12px; }
+    .zmiti-poster-main-ui .zmiti-logo img {
+      width: 1.2rem; }
+  .zmiti-poster-main-ui .zmiti-home {
+    width: 5rem;
+    position: absolute;
+    left: 2.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: .2rem .3rem .8rem .3rem;
+    box-sizing: border-box;
+    border-radius: 10px; }
+  .zmiti-poster-main-ui .zmiti-qrcode {
+    width: 2rem;
+    position: absolute;
+    z-index: 1;
+    padding: 3px; }
+  .zmiti-poster-main-ui .zmiti-wish {
+    color: #fff; }
+    .zmiti-poster-main-ui .zmiti-wish span {
+      position: absolute;
+      width: .6rem;
+      top: 2rem;
+      left: 1.1rem;
+      font-size: 12px;
+      height: 80%;
+      top: 0;
+      display: -webkit-box;
+      -webkit-box-align: center;
+      -webkit-box-pack: center;
+      -webkit-box-orient: horizontal; }
+      .zmiti-poster-main-ui .zmiti-wish span label {
+        display: block; }
+      .zmiti-poster-main-ui .zmiti-wish span:nth-of-type(2) {
+        left: 1.7rem; }
+  .zmiti-poster-main-ui .zmiti-poster1 {
+    position: absolute;
+    width: 6rem;
+    left: 2rem;
+    top: 3.5rem; }
+    .zmiti-poster-main-ui .zmiti-poster1 .zmiti-wish {
+      color: #813c1f;
+      position: relative;
+      text-align: center;
+      line-height: .8rem; }
+    .zmiti-poster-main-ui .zmiti-poster1 .zmiti-username {
+      color: #813c1f;
+      position: relative;
+      text-align: center;
+      height: 1rem;
+      left: 0;
+      top: .1rem; }
+  .zmiti-poster-main-ui .zmiti-poster2 {
+    position: absolute;
+    width: 6rem;
+    left: 2rem;
+    bottom: 1rem; }
+    .zmiti-poster-main-ui .zmiti-poster2 .zmiti-wish {
+      color: #fff;
+      position: relative;
+      line-height: .8rem;
+      text-align: center; }
+    .zmiti-poster-main-ui .zmiti-poster2 .zmiti-username {
+      color: #fff;
+      position: relative;
+      text-align: center;
+      height: 1rem;
+      left: 0;
+      top: .1rem; }
+    .zmiti-poster-main-ui .zmiti-poster2 > div {
+      text-align: center;
+      color: #fff; }
+  .zmiti-poster-main-ui .zmiti-poster3 {
+    position: absolute;
+    width: 6rem;
+    left: 2rem;
+    top: 6rem; }
+    .zmiti-poster-main-ui .zmiti-poster3 .zmiti-wish {
+      color: #000;
+      position: relative;
+      text-align: center;
+      line-height: .8rem; }
+    .zmiti-poster-main-ui .zmiti-poster3 .zmiti-username {
+      color: #000;
+      position: relative;
+      text-align: center;
+      height: 1rem;
+      left: 0;
+      top: .1rem; }
+  .zmiti-poster-main-ui .zmiti-username {
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    left: .6rem;
+    top: 4rem; }
+    .zmiti-poster-main-ui .zmiti-username span {
+      display: block;
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg); }
+  .zmiti-poster-main-ui .zmiti-do-poster {
+    position: absolute;
+    width: 2rem;
+    height: .8rem;
+    line-height: .8rem;
+    text-align: center;
+    color: #fff;
+    right: .5rem;
+    top: .5rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0 .2rem;
+    border-radius: 0.1rem; }
+    .zmiti-poster-main-ui .zmiti-do-poster a {
+      color: inherit;
+      display: block;
+      width: 100%;
+      height: 100%; }
+    .zmiti-poster-main-ui .zmiti-do-poster.zmiti-do-poster1 {
+      background: rgba(255, 255, 255, 0.7);
+      color: #000; }
+
+/*# sourceMappingURL=poster.css.map */

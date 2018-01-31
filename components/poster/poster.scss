@@ -1,0 +1,181 @@
+@import "../css/base.scss";
+
+.zmiti-poster-main-ui {
+	z-index: 20;
+
+	.zmiti-logo {
+		@include pos(a);
+		width: 2.5rem;
+		left: .5rem;
+		top: .3rem;
+		z-index: 10;
+		font-size: 12px;
+
+		img {
+			width: 1.2rem;
+		}
+
+	}
+
+	.zmiti-home {
+		width: 5rem;
+		@include pos(a);
+		left: 2.5rem;
+		background: rgba(0, 0, 0, .5);
+		padding: .2rem .3rem .8rem .3rem;
+		box-sizing: border-box;
+		@include br(10px);
+	}
+
+	.zmiti-qrcode {
+		width: 2rem;
+		@include pos(a);
+		z-index: 1;
+		padding: 3px;
+	}
+
+	.zmiti-wish {
+		color: #fff;
+
+		span {
+			@include pos(a);
+			width: .6rem;
+			top: 2rem;
+			left: 1.1rem;
+			font-size: 12px;
+			height: 80%;
+			top: 0;
+			@include displayBox(horizontal);
+
+			label {
+				display: block;
+			}
+
+			&:nth-of-type(2) {
+				left: 1.7rem;
+			}
+
+		}
+
+	}
+
+	.zmiti-poster1 {
+		@include pos(a);
+		width: 6rem;
+		left: 2rem;
+		top: 3.5rem;
+
+		.zmiti-wish {
+			color: #813c1f;
+			@include pos(r);
+			text-align: center;
+			line-height: .8rem;
+		}
+
+		.zmiti-username {
+			color: #813c1f;
+			@include pos(r);
+			text-align: center;
+			height: 1rem;
+			left: 0;
+			top: .1rem;
+		}
+
+	}
+
+	.zmiti-poster2 {
+		@include pos(a);
+		width: 6rem;
+		left: 2rem;
+		bottom: 1rem;
+
+		.zmiti-wish {
+			color: #fff;
+			@include pos(r);
+			line-height: .8rem;
+			text-align: center;
+		}
+
+		.zmiti-username {
+			color: #fff;
+			@include pos(r);
+			text-align: center;
+			height: 1rem;
+			left: 0;
+			top: .1rem;
+		}
+
+		&>div {
+			text-align: center;
+			color: #fff;
+		}
+
+	}
+
+	.zmiti-poster3 {
+		@include pos(a);
+		width: 6rem;
+		left: 2rem;
+		top: 6rem;
+
+		.zmiti-wish {
+			color: #000;
+			@include pos(r);
+			text-align: center;
+			line-height: .8rem;
+		}
+
+		.zmiti-username {
+			color: #000;
+			@include pos(r);
+			text-align: center;
+			height: 1rem;
+			left: 0;
+			top: .1rem;
+		}
+
+	}
+
+	.zmiti-username {
+		color: #fff;
+		font-size: 12px;
+		@include pos(a);
+		left: .6rem;
+		top: 4rem;
+
+		span {
+			display: block;
+			@include transform(rotate(90deg));
+			//margin: -4px 0;
+		}
+
+	}
+
+	.zmiti-do-poster {
+		@include pos(a);
+		width: 2rem;
+		height: .8rem;
+		line-height: .8rem;
+		text-align: center;
+		color: #fff;
+		right: .5rem;
+		top: .5rem;
+		background: rgba(0, 0, 0, .5);
+		padding: 0 .2rem;
+		@include br(.1rem);
+
+		a {
+			color: inherit;
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		&.zmiti-do-poster1 {
+			background: rgba(255, 255, 255, .7);
+			color: #000;
+		}
+
+	}
+
+}

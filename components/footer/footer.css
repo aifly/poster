@@ -1,0 +1,56 @@
+/*.ant-btn:focus, .ant-btn:hover,.ant-input:focus, .ant-input:hover {
+    background-color: #fff;
+    border-color: #bf1616;
+    box-shadow: 0 0 0 2px rgba(191, 22, 22, 0.1);
+}*/
+.lt-full {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+.zmiti-text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis; }
+
+.zmiti-play {
+  width: .8rem;
+  height: .8rem;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 1000;
+  right: .5rem;
+  top: .5rem; }
+  .zmiti-play.rotate {
+    -webkit-animation: rotate 5s linear infinite;
+    animation: rotate 5s linear infinite; }
+
+@-webkit-keyframes rotate {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+.zmiti-footer-main-ui .zmiti-footer-btns {
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  -webkit-box-orient: horizontal;
+  width: 8rem;
+  margin: 1rem auto; }
+  .zmiti-footer-main-ui .zmiti-footer-btns > div {
+    -webkit-box-flex: 1;
+    margin: 0 .3rem; }
+.zmiti-footer-main-ui .zmiti-look-copyright {
+  width: 3rem;
+  height: 1rem;
+  border: 1px solid #054485;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 1rem;
+  margin: .5rem auto;
+  font-size: .5rem; }
+
+/*# sourceMappingURL=footer.css.map */

@@ -1,0 +1,27 @@
+@import "../css/base.scss";
+
+.zmiti-footer-main-ui {
+	.zmiti-footer-btns {
+		@include displayBox(horizontal);
+		width: 8rem;
+		margin: 1rem auto;
+
+		&>div {
+			-webkit-box-flex: 1;
+			margin: 0 .3rem;
+		}
+
+	}
+
+	.zmiti-look-copyright {
+		width: 3rem;
+		height: 1rem;
+		border: 1px solid #054485;
+		@include br(8px);
+		text-align: center;
+		line-height: 1rem;
+		margin: .5rem auto;
+		font-size: .5rem;
+	}
+
+}

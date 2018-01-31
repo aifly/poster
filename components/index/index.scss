@@ -1,0 +1,128 @@
+﻿@import "../css/base.scss";
+
+html, body, div, p, ul, li, ol, dl, dt, dd, header, footer, video, h1, h2, h3, h4, canvas, section, figure {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+html, body {
+	height: 100%;
+	-webkit-tap-highlight-color: transparent;
+}
+
+body {
+	font-family: "Helvetica Neue", 'Helvetica', "Microsoft YaHei", '微软雅黑', arial, sans-serif;
+	font-size: 14px;
+	background: #fff;
+	overflow: hidden;
+
+	&>div {
+	}
+
+}
+
+img {
+	border: none;
+	vertical-align: middle;
+	width: 100%;
+	height: auto;
+}
+
+.zmiti-index-main-ui {
+	background: #bc0014;
+	overflow: hidden;
+
+	.zmiti-index-lantern {
+		width: 2rem;
+		@include pos(a);
+		right: 0;
+		top: 0;
+		z-index: 10;
+	}
+
+	.title-enter-active, .title-leave-active {
+		@include transition(1s);
+	}
+
+	.title-enter, .title-leave-to {
+		opacity: 0;
+		@include transform(translate3d(0, 20rem, 0));
+	}
+
+	.zmiti-index-title {
+		@include pos(a);
+		z-index: 0;
+		top: -1.2rem;
+		width: 9rem;
+		left: .5rem;
+		//@include transform(translate3d(0, 0rem, 0));
+	}
+
+	.zmiti-index-bottom {
+		width: 10rem;
+		@include pos(a);
+		z-index: 10;
+		bottom: 0;
+		left: 0;
+
+		.zmiti-index-open {
+			@include pos(a);
+			width: 3rem;
+			left: 3.5rem;
+			top: .4rem;
+			@include animation(pulse 1s linear infinite);
+		}
+
+		.open-enter-active, .open-leave-active {
+			@include transition(.7s opacity);
+		}
+
+		.open-enter, .open-leave-to {
+			opacity: 0;
+		}
+
+	}
+
+}
+
+@-webkit-keyframes pulse {
+	from {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+
+	50% {
+		-webkit-transform: scale3d(1.1, 1.1, 1.1);
+		transform: scale3d(1.1, 1.1, 1.1);
+	}
+
+	to {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+
+}
+
+.zmiti-mask {
+	@include pos(f);
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .6);
+	z-index: 300;
+	text-align: right;
+
+	img {
+		width: 6rem;
+	}
+
+}

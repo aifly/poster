@@ -1,0 +1,159 @@
+@import "../css/base.scss";
+
+.zmiti-page1-main-ui {
+	opacity: 0;
+	@include transition(1s .4s);
+
+	&.show {
+		z-index: 102;
+		opacity: 1;
+	}
+
+	color: #054485;
+	background: #fff;
+	z-index: -1;
+	font-size: 12px;
+
+	&>section {
+		padding-bottom: 1rem;
+	}
+
+	.zmiti-video-main-ui {
+		@include pos(r);
+
+		.zmiti-video-C {
+			@include pos(a);
+			left: 1rem;
+			top: 1.8rem;
+			width: 7rem;
+			overflow: hidden;
+			@include br(10px);
+			border: 1px solid #2b6198;
+			height: 3.95rem;
+
+			.zmiti-paused {
+				@include pos(a);
+				z-index: 100;
+				width: 1rem;
+				left: 50%;
+				margin-left: -.5rem;
+				top: 50%;
+				margin-top: -.5rem;
+			}
+
+			video {
+				@include br(10px);
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+			}
+
+			&>div {
+				@include pos(a);
+				width: 100%;
+				height: 100%;
+				z-index: 10;
+			}
+
+		}
+
+	}
+
+	.zmiti-item {
+		margin-top: .6rem;
+		@include pos(r);
+
+		.zmiti-j-content {
+			width: 7rem;
+			@include pos(a);
+			left: 1.5rem;
+			top: 1.5rem;
+
+			h2 {
+				font-size: .5rem;
+				font-weight: normal;
+				text-align: center;
+			}
+
+			.zmiti-j-sub-title {
+				text-align: center;
+				margin: .4rem 0;
+			}
+
+			.zmiti-j-text {
+				text-indent: 2em;
+
+				&>div {
+					margin: 10px 0;
+				}
+
+				line-height: .6rem;
+			}
+
+		}
+
+		.zmiti-microphone {
+			@include pos(a);
+			width: 1.4rem;
+			right: 1rem;
+			top: .4rem;
+		}
+
+		&>img.zmiti-bg {
+			width: 9rem;
+			display: block;
+			margin: 0 auto;
+			height: 9.5rem;
+		}
+
+		&>img.zmiti-bg2 {
+			display: block;
+			margin: 0 auto;
+			height: 8rem;
+		}
+
+	}
+
+	.zmiti-item2 {
+		.zmiti-j-text {
+			margin-top: .4rem;
+		}
+
+	}
+
+	.zmiti-item4 {
+		width: 8rem;
+		margin: 0 auto;
+		border: 1px solid transparent;
+
+		&>img.zmiti-bg {
+			height: 7rem;
+			width: 100%;
+		}
+
+		.zmiti-j-content {
+			@include pos(a);
+			width: 80%;
+			left: 10%;
+			@include transform(rotate(-3deg));
+		}
+
+		.zmiti-camera2 {
+			@include pos(a);
+			width: 1rem;
+			right: 0;
+			bottom: 0;
+		}
+
+	}
+
+	.zmiti-item5 {
+		&>img.zmiti-bg {
+			width: 100%;
+			height: 14rem;
+		}
+
+	}
+
+}
