@@ -26,6 +26,9 @@ var zmitiUtil = {
 			return false;
 		}
 	},
+	isAndroid() {
+		return !(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent));
+	},
 	wxConfig: function(title, desc, url, isDebug = false) {
 		var s = this;
 		var img = window.baseUrl + '/assets/images/300.jpg';
@@ -137,31 +140,22 @@ var zmitiUtil = {
 					window.headimgurl = s.headimgurl;
 					window.openid = s.openid;
 
-					var URI = window.location.href.split('#')[0];
+					//var URI = window.location.href.split('#')[0];
 
-					s.wxConfig('为你圆梦', '@留守儿童 新华社喊你来许愿！有机会得团圆基金哦');
+					//s.wxConfig('为你圆梦', '@留守儿童 新华社喊你来许愿！有机会得团圆基金哦');
 
 				} else {
 					if (s.isWeiXin()) {
-						var mobile = s.getQueryString('mobile');
-						var address1 = s.getQueryString('address1');
-						var address2 = s.getQueryString('address2');
-						var qid = s.getQueryString('qid');
+						var wish = s.getQueryString('wish');
+						var username = s.getQueryString('username');
 
 						var redirect_uri = window.location.href.split('?')[0];
 
-						if (mobile) {
-							redirect_uri = s.changeURLPar(redirect_uri, 'mobile', (mobile));
+						if (wish) {
+							redirect_uri = s.changeURLPar(redirect_uri, 'wish', (wish));
 						}
-						if (address1) {
-							redirect_uri = s.changeURLPar(redirect_uri, 'address1', (address1));
-						}
-						if (address2) {
-							redirect_uri = s.changeURLPar(redirect_uri, 'address2', (address2));
-						}
-
-						if (qid) {
-							redirect_uri = s.changeURLPar(redirect_uri, 'qid', (qid));
+						if (username) {
+							redirect_uri = s.changeURLPar(redirect_uri, 'username', (username));
 						}
 
 						$.ajax({
@@ -178,12 +172,11 @@ var zmitiUtil = {
 							success: function(dt) {
 								if (dt.getret === 0) {
 									window.location.href = dt.url;
-
 								}
 							}
 						})
 					} else {
-						s.wxConfig('为你圆梦', '@留守儿童 新华社喊你来许愿！有机会得团圆基金哦')
+						//s.wxConfig('为你圆梦', '@留守儿童 新华社喊你来许愿！有机会得团圆基金哦')
 					}
 
 				}

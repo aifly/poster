@@ -4,6 +4,7 @@ import Vr from './components/vr/vr';
 import Poster from './components/poster/poster';
 import Obserable from './components/lib/obserable';
 import imgs from './components/lib/assets'
+import zmitiUtil from './components/lib/util.js'
 import $ from 'jquery';
 import './components/lib/touch.js';
 var obserable = new Obserable();
@@ -13,20 +14,28 @@ var obserable = new Obserable();
 
 /* eslint-disable no-new */
 
-new Vue({
+window.vue = new Vue({
 	data: {
 		obserable,
 		rotate: false,
 		imgs,
 		showMask: false,
-		viewH: document.documentElement.clientHeight
-
+		viewH: document.documentElement.clientHeight,
+		isShare: false,
+		show: false,
+		username: '',
+		wish: '',
 	},
 	el: '#app',
 	template: `<div>
-		<Index :obserable='obserable'></Index>
-		<Vr :obserable='obserable'></Vr>
-		<Poster :obserable='obserable'></Poster>
+		<Index v-if='show && !isShare' :obserable='obserable'></Index>
+		<Vr v-if='show && !isShare'  :obserable='obserable'></Vr>
+		<Poster  :username='username' :wish='wish'  :obserable='obserable'></Poster>
+		<div  @click='toggleMusic' class='zmiti-play' :class='{"rotate":rotate}'>
+			<img v-if='rotate' :src='imgs.play'/>
+			<img v-if='!rotate' :src='imgs.paused'/>
+		</div>
+		<audio ref='audio' src='./assets/music/bg.mp3' autoplay loop></audio>
 	</div>`,
 	methods: {
 
@@ -54,6 +63,9 @@ new Vue({
 			}
 			loadimg();
 		},
+		init() {
+			this.show = true;
+		},
 		toggleMusic() {
 			var music = this.$refs['audio'];
 			music[music.paused ? 'play' : 'pause']()
@@ -76,6 +88,48 @@ new Vue({
 	},
 	mounted() {
 
+
+		var username = (zmitiUtil.getQueryString('username')),
+			wish = (zmitiUtil.getQueryString('wish')),
+			src = (zmitiUtil.getQueryString('src'));
+
+		this.isShare = (username && wish && src);
+
+		if (window.loaded) {
+			this.init();
+		}
+
+		this.username = decodeURI(username);
+		this.wish = decodeURI(wish);
+		this.src = src;
+
+		if (this.isShare) {
+
+			setTimeout(() => {
+				obserable.trigger({
+					type: 'getWish',
+					data: {
+						username: this.username,
+						wish: this.wish,
+						src: this.src
+					}
+				})
+				obserable.trigger({
+					type: 'showPoster'
+				})
+				var url = window.location.href.split('#')[0];
+				url = zmitiUtil.changeURLPar(url, 'username', encodeURI(username));
+				url = zmitiUtil.changeURLPar(url, 'wish', encodeURI(wish));
+				url = zmitiUtil.changeURLPar(url, 'src', src);
+
+				zmitiUtil.wxConfig(document.title, document.title, url);
+			}, 10)
+		} else {
+			//zmitiUtil.getOauthurl();
+		}
+
+
+
 		/*this.loading(arr, (s) => {
 			obserable.trigger({
 				type: 'loading',
@@ -91,7 +145,17 @@ new Vue({
 			this.showMask = true;
 		})
 
-		return;
+
+		/*$.ajax({
+			url: 'https://api.zmiti.com/v2/weixinxcx/get_viewarticle/',
+			type: 'post',
+			data: {
+				appid: 'wx32e63224f58f2cb5'
+			}
+		}).done((data) => {
+			console.log(data);
+		})*/
+
 		$(this.$refs['audio']).on('play', () => {
 			this.rotate = true;
 		}).on('pause', () => {
@@ -113,5 +177,9 @@ new Vue({
 		});
 
 		this.updatePv();
+
+
+
+		zmitiUtil.wxConfig(document.title, document.title)
 	}
 })

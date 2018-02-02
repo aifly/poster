@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*.ant-btn:focus, .ant-btn:hover,.ant-input:focus, .ant-input:hover {
     background-color: #fff;
     border-color: #bf1616;
@@ -34,7 +35,13 @@
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
 .zmiti-poster-main-ui {
-  z-index: 20; }
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s; }
+  .zmiti-poster-main-ui.show {
+    opacity: 1;
+    z-index: 20; }
   .zmiti-poster-main-ui .zmiti-logo {
     position: absolute;
     width: 2.5rem;
@@ -44,6 +51,16 @@
     font-size: 12px; }
     .zmiti-poster-main-ui .zmiti-logo img {
       width: 1.2rem; }
+  .zmiti-poster-main-ui .zmiti-share-page1 {
+    position: absolute;
+    z-index: -1000;
+    left: 20rem;
+    top: 20rem;
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    width: 100%;
+    height: 101%;
+    overflow: hidden; }
   .zmiti-poster-main-ui .zmiti-home {
     width: 5rem;
     position: absolute;
@@ -52,6 +69,45 @@
     padding: .2rem .3rem .8rem .3rem;
     box-sizing: border-box;
     border-radius: 10px; }
+  .zmiti-poster-main-ui .zmiti-clip-img {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%; }
+    .zmiti-poster-main-ui .zmiti-clip-img .share-enter-active, .zmiti-poster-main-ui .zmiti-clip-img .share-leave-active {
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8); }
+    .zmiti-poster-main-ui .zmiti-clip-img .share-enter, .zmiti-poster-main-ui .zmiti-clip-img .share-leave-to {
+      opacity: 0;
+      -webkit-transform: scale(1);
+      transform: scale(1); }
+    .zmiti-poster-main-ui .zmiti-clip-img.active:after {
+      content: "长按保存图片";
+      position: absolute;
+      width: .6rem;
+      z-index: 10;
+      right: .4rem;
+      font-size: 12px;
+      color: #fff;
+      bottom: 10vh; }
+    .zmiti-poster-main-ui .zmiti-clip-img > div {
+      overflow: hidden;
+      border: 2px solid #fff;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box; }
+    .zmiti-poster-main-ui .zmiti-clip-img:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 0 6px #853c24; }
   .zmiti-poster-main-ui .zmiti-qrcode {
     width: 2rem;
     position: absolute;

@@ -62,7 +62,13 @@ img {
 
 .zmiti-index-main-ui {
   background: #bc0014;
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: -1;
+  opacity: 0; }
+  .zmiti-index-main-ui.show {
+    opacity: 1;
+    z-index: 102;
+    position: fixed; }
   .zmiti-index-main-ui .zmiti-index-lantern {
     width: 2rem;
     position: absolute;

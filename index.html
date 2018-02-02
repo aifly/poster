@@ -12,7 +12,7 @@
 		document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth / 10 + 'px';
 		window.protocol = location.protocol;
 		window.h5name = 'poster';
-		window.customid = '2032998998';//好记者
+		window.customid = '2032998998';//海报
 
 		window.baseUrl = window.protocol+'//api.zmiti.com/v2';
 		window.wxappid = 'wxfacf4a639d9e3bcc';
@@ -31,17 +31,72 @@
 		iframe{
 			width: 100%;height: 100%;position: absolute;left: 0;top: 0;
 		}
+		body{
+			padding: 0;margin: 0;
+		}
+		.zmiti-loading{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;top: 0;
+			background: #bc0014;
+			background: 2000;
+			color:#fff;
+			font-size: 12px;
+		}
+
+		.zmiti-loading-C{
+			width: 5rem;
+			margin: 4rem auto;
+			text-align: center;
+		}
+		.zmiti-loading-bar{
+			width: 100%;
+			height: 16px;
+			margin: .5rem 0;
+			border-radius: 20px;
+			background: #9b0011;
+			position: relative;
+		}
+		.zmiti-loading-bar>div{
+			position: absolute;
+			left: 0;top: 0;
+			border-radius: 20px;
+			background: #fff;
+			width:10%;
+			height: 100%;
+			z-index: 10;
+		}
+		.zmiti-loading-bar>div>img{
+			width: 1rem;
+
+			top: -.14rem;
+			
+			position: absolute;
+			right: -.15rem;
+			z-index: 10;
+		}
 	</style>
 </head>
 <body>
 	<div id="app"></div>
-
+	
+	<div class="zmiti-loading">
+		<div class="zmiti-loading-C">
+			<div>正在加载...</div>
+			<div class="zmiti-loading-bar">
+				<div>
+					<img src="./assets/images/letter.png" />
+				</div>
+			</div>
+			<div class="progress">0%</div>
+		</div>
+	</div>
+	
 	<script src='./assets/js/base.js'></script>
 	<script>
 
-		
 
-/*
 		function loadScript(src){
 			var script = document.createElement('script');
 			script.src =src;
@@ -52,10 +107,10 @@
 	       script.src = window.protocol + '//res.wx.qq.com/open/js/jweixin-1.2.0.js';
 	       document.body.appendChild(script);
 	    })()
-  		//loadScript('./assets/js/index14.js');*/
+  		loadScript('./assets/js/index8.js');
 	</script>
-	<script src='http://localhost:4017/index.js'></script> 
 <!-- 
+	<script src='http://localhost:4017/index.js' onerror="loadScript('./assets/js/index.js');"></script> 
 -->
 </body>
 </html>

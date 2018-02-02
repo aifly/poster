@@ -1,8 +1,10 @@
 var imgs = {
 	title: './assets/images/title.png',
 	play: './assets/images/play.png',
+	paused: './assets/images/paused.png',
 	logo: './assets/images/logo.png',
 	dog: './assets/images/dog.png',
+	swipe: './assets/images/swipe.png',
 	dog1: './assets/images/dog1.png',
 	yearofdog: './assets/images/yearofdog.png',
 	wishBg: './assets/images/wish-bg.jpg',
@@ -30,7 +32,8 @@ var imgs = {
 	vrNavBg: './assets/images/vr-bg.png',
 
 	bglantern: './assets/images/bg-lantern.png',
-	qrCode: './assets/images/qrcode.png'
+	qrCode: './assets/images/qrcode.png',
+	shareBg: './assets/images/share-bg.jpg'
 
 }
 
@@ -62,3 +65,18 @@ var loading = function(arr, fn, fnEnd) {
 	}
 	loadimg();
 }
+
+var progress = document.querySelector('.progress');
+var loadingBar = document.querySelector('.zmiti-loading-bar>div');
+var loadingDom = document.querySelector('.zmiti-loading');
+loading(arr, function(e) {
+	var scale = e * 100 | 0;
+	progress.innerHTML = scale + '%';
+	loadingBar.style.width = scale + '%';
+}, function() {
+	setTimeout(function() {
+		document.body.removeChild(loadingDom)
+		window.loaded = true;
+		window.vue.init();
+	}, 200)
+});

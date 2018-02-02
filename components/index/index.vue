@@ -1,23 +1,21 @@
 <template>
-	<div class="zmiti-index-main-ui lt-full" >
-		
+	<div :class="{'show':show}" class="zmiti-index-main-ui lt-full" >
 
-		<div class="zmiti-index-lantern">
+		<div v-if='false' class="zmiti-index-lantern">
 			<img :src="imgs.lantern" alt="" />
 		</div>
 
 		<transition
 		 v-on:after-enter="afterLeave"
 		 name='title'>
-			<div class="zmiti-index-title" v-show='showTitle'>
-				<img :src="imgs.title" alt="" />
+			<div  class="zmiti-index-title" v-show='showTitle'>
+				<img @load='showTitle = true' :src="imgs.title" alt="" />
 			</div>
 		</transition>
 
-
 		<div class="zmiti-index-bottom">
 			<transition name='open'>
-				<div class="zmiti-index-open" v-if='showOpen'>
+				<div v-tap='entryMain' class="zmiti-index-open" v-if='showOpen'>
 					<img :src='imgs.open'/>
 				</div>
 			</transition>
@@ -38,7 +36,7 @@
 				imgs,
 				showTitle:false,
 				showOpen:false,
-				show:false,
+				show:true,
 				viewW:window.innerWidth,
 				viewH:window.innerHeight,
 			}
@@ -46,16 +44,21 @@
 		methods:{
 			afterLeave(){
 				this.showOpen = true;
+			},
+			entryMain(){
+				this.show = false;
 			}
 		},
 		mounted(){
 
 			var {obserable} = this;
 
+
 			setTimeout(()=>{
-				this.showTitle = true;
-				 
-			},100)
+				//this.showTitle = true;
+			},100);
+
+
 
 			//zmitiUtil.wxConfig(document.title,document.title);
 

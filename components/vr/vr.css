@@ -36,7 +36,8 @@
 .zmiti-vr-main-ui {
   z-index: 10;
   background: #fff;
-  overflow: hidden; }
+  overflow: hidden;
+  position: fixed; }
   .zmiti-vr-main-ui .zmiti-vr-bottom {
     width: 10rem;
     bottom: 0;
@@ -62,11 +63,22 @@
       .zmiti-vr-main-ui .zmiti-vr-nav ul li {
         position: relative;
         height: 1.4rem;
-        overflow: hidden; }
+        overflow: hidden;
+        -webkit-transition: 0.5s;
+        transition: 0.5s; }
         .zmiti-vr-main-ui .zmiti-vr-nav ul li img {
           position: absolute;
           left: 0;
           top: 0; }
+        .zmiti-vr-main-ui .zmiti-vr-nav ul li:last-of-type {
+          position: absolute;
+          width: 100%;
+          top: 0;
+          left: 0;
+          -webkit-transform: translateY(7rem);
+          transform: translateY(7rem); }
+      .zmiti-vr-main-ui .zmiti-vr-nav ul .zmiti-nav-enter, .zmiti-vr-main-ui .zmiti-vr-nav ul .zmiti-nav-leave-to {
+        opacity: 0; }
   .zmiti-vr-main-ui .zmiti-vr-dog {
     width: 4rem;
     position: absolute;
@@ -80,8 +92,7 @@
       width: 8rem;
       position: absolute;
       left: 1rem;
-      height: 80vh;
-      top: 10vh; }
+      height: 100%; }
       .zmiti-vr-main-ui .zmiti-poster-info .zmiti-poster-info-C .zmiti-poster-dog, .zmiti-vr-main-ui .zmiti-poster-info .zmiti-poster-info-C .zmiti-poster-yearofdog {
         width: 50%;
         position: absolute;
@@ -89,7 +100,7 @@
       .zmiti-vr-main-ui .zmiti-poster-info .zmiti-poster-info-C .zmiti-poster-dog {
         top: 3vh; }
       .zmiti-vr-main-ui .zmiti-poster-info .zmiti-poster-info-C .zmiti-poster-yearofdog {
-        top: 20vh;
+        top: 12%;
         z-index: 2; }
       .zmiti-vr-main-ui .zmiti-poster-info .zmiti-poster-info-C .zmiti-wish-C {
         position: absolute;
@@ -109,7 +120,8 @@
         left: 10%;
         text-align: center; }
         .zmiti-vr-main-ui .zmiti-poster-info .zmiti-poster-info-C .zmiti-poster-form > h2 {
-          height: 1.2rem; }
+          height: 1.8rem;
+          line-height: 2.2rem; }
         .zmiti-vr-main-ui .zmiti-poster-info .zmiti-poster-info-C .zmiti-poster-form .zmiti-form-item {
           text-align: left;
           font-size: .5rem;
@@ -155,5 +167,26 @@
           line-height: 1rem;
           margin: .5rem auto;
           border-radius: 0.2rem; }
+          .zmiti-vr-main-ui .zmiti-poster-info .zmiti-poster-info-C .zmiti-poster-form .zmiti-create-poster-btn.disabled {
+            background: #ccc;
+            color: #bbb; }
+  .zmiti-vr-main-ui .zmiti-tip {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    -webkit-box-orient: horizontal; }
+    .zmiti-vr-main-ui .zmiti-tip img {
+      display: block;
+      width: 7rem; }
+
+.zmiti-play {
+  top: 1.5rem !important; }
 
 /*# sourceMappingURL=vr.css.map */
