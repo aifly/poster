@@ -40,7 +40,6 @@
   position: fixed; }
   .zmiti-vr-main-ui .zmiti-vr-bottom {
     width: 10rem;
-    bottom: 0;
     position: absolute;
     left: 0;
     z-index: 1; }
@@ -82,7 +81,6 @@
   .zmiti-vr-main-ui .zmiti-vr-dog {
     width: 4rem;
     position: absolute;
-    bottom: .3rem;
     left: 2rem;
     z-index: 1; }
   .zmiti-vr-main-ui .zmiti-poster-info {
@@ -91,6 +89,10 @@
     .zmiti-vr-main-ui .zmiti-poster-info .zmiti-poster-info-C {
       width: 8rem;
       position: absolute;
+      display: -webkit-box;
+      -webkit-box-align: center;
+      -webkit-box-pack: center;
+      -webkit-box-orient: horizontal;
       left: 1rem;
       height: 100%; }
       .zmiti-vr-main-ui .zmiti-poster-info .zmiti-poster-info-C .zmiti-poster-dog, .zmiti-vr-main-ui .zmiti-poster-info .zmiti-poster-info-C .zmiti-poster-yearofdog {
@@ -98,24 +100,23 @@
         position: absolute;
         left: 25%; }
       .zmiti-vr-main-ui .zmiti-poster-info .zmiti-poster-info-C .zmiti-poster-dog {
-        top: 3vh; }
+        top: -3rem;
+        z-index: -1; }
       .zmiti-vr-main-ui .zmiti-poster-info .zmiti-poster-info-C .zmiti-poster-yearofdog {
-        top: 12%;
+        top: -.2rem;
         z-index: 2; }
       .zmiti-vr-main-ui .zmiti-poster-info .zmiti-poster-info-C .zmiti-wish-C {
-        position: absolute;
-        bottom: 0;
+        top: .5rem;
+        position: relative;
         left: 0;
         z-index: 1;
-        height: 65vh;
         width: 100%; }
         .zmiti-vr-main-ui .zmiti-poster-info .zmiti-poster-info-C .zmiti-wish-C > img {
-          position: absolute;
           bottom: 0;
           left: 0; }
       .zmiti-vr-main-ui .zmiti-poster-info .zmiti-poster-info-C .zmiti-poster-form {
         position: absolute;
-        top: 2.2rem;
+        top: .8rem;
         width: 80%;
         left: 10%;
         text-align: center; }
@@ -140,10 +141,12 @@
             box-sizing: border-box;
             margin-top: -.2rem;
             border-radius: 0.1rem;
-            outline: none; }
+            outline: none;
+            font-size: .4rem; }
         .zmiti-vr-main-ui .zmiti-poster-info .zmiti-poster-info-C .zmiti-poster-form .zmiti-form-item2 {
           height: 2rem; }
           .zmiti-vr-main-ui .zmiti-poster-info .zmiti-poster-info-C .zmiti-poster-form .zmiti-form-item2 textarea {
+            font-size: .4rem;
             border: 1px solid #a80318;
             border-radius: 0.1rem;
             box-sizing: border-box;
@@ -158,7 +161,8 @@
             right: .1rem;
             bottom: .1rem;
             z-index: 10;
-            font-size: .36rem; }
+            font-size: .36rem;
+            color: #fb0000; }
         .zmiti-vr-main-ui .zmiti-poster-info .zmiti-poster-info-C .zmiti-poster-form .zmiti-create-poster-btn {
           background: #a80318;
           color: #fff;
@@ -171,22 +175,20 @@
             background: #ccc;
             color: #bbb; }
   .zmiti-vr-main-ui .zmiti-tip {
-    position: fixed;
+    position: absolute;
     z-index: 100;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    display: -webkit-box;
-    -webkit-box-align: center;
-    -webkit-box-pack: center;
-    -webkit-box-orient: horizontal; }
+    background: rgba(0, 0, 0, 0.3); }
     .zmiti-vr-main-ui .zmiti-tip img {
       display: block;
-      width: 7rem; }
-
-.zmiti-play {
-  top: 1.5rem !important; }
+      width: 7rem;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
 
 /*# sourceMappingURL=vr.css.map */

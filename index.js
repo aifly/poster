@@ -35,7 +35,7 @@ window.vue = new Vue({
 			<img v-if='rotate' :src='imgs.play'/>
 			<img v-if='!rotate' :src='imgs.paused'/>
 		</div>
-		<audio ref='audio' src='./assets/music/bg.mp3' autoplay loop></audio>
+		<audio ref='audio' src='./assets/music/bg1.mp3' autoplay loop></audio>
 	</div>`,
 	methods: {
 
@@ -180,6 +180,6 @@ window.vue = new Vue({
 
 
 
-		zmitiUtil.wxConfig(document.title, document.title)
+		zmitiUtil.wxConfig(document.title, window.desc);
 	}
 })

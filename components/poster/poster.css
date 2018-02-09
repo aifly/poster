@@ -84,12 +84,12 @@
     .zmiti-poster-main-ui .zmiti-clip-img.active:after {
       content: "长按保存图片";
       position: absolute;
-      width: .6rem;
+      width: .38rem;
       z-index: 10;
-      right: .4rem;
+      right: .55rem;
       font-size: 12px;
       color: #fff;
-      bottom: 10vh; }
+      bottom: 14vh; }
     .zmiti-poster-main-ui .zmiti-clip-img > div {
       overflow: hidden;
       border: 2px solid #fff;
@@ -97,6 +97,8 @@
       transition: 0.4s;
       -webkit-transform: scale(0.8);
       transform: scale(0.8);
+      -webkit-transform-origin: center 30%;
+      transform-origin: center 30%;
       width: 100%;
       height: 100%;
       box-sizing: border-box; }
@@ -147,6 +149,7 @@
       text-align: center;
       height: 1rem;
       left: 0;
+      font-size: .55rem;
       top: .1rem; }
   .zmiti-poster-main-ui .zmiti-poster2 {
     position: absolute;
@@ -187,7 +190,7 @@
       top: .1rem; }
   .zmiti-poster-main-ui .zmiti-username {
     color: #fff;
-    font-size: 12px;
+    font-size: .55rem;
     position: absolute;
     left: .6rem;
     top: 4rem; }
@@ -195,6 +198,28 @@
       display: block;
       -webkit-transform: rotate(90deg);
       transform: rotate(90deg); }
+  .zmiti-poster-main-ui .zmiti-poster-btns {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    z-index: 10;
+    width: 6rem;
+    left: 2rem;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: justify; }
+    .zmiti-poster-main-ui .zmiti-poster-btns > div {
+      background: #f4b470;
+      color: #6a4824;
+      width: 2.6rem;
+      text-align: center;
+      height: .8rem;
+      line-height: .8rem;
+      border-radius: 4px; }
+      .zmiti-poster-main-ui .zmiti-poster-btns > div:nth-of-type(1) {
+        margin-right: .5rem; }
   .zmiti-poster-main-ui .zmiti-do-poster {
     position: absolute;
     width: 2rem;

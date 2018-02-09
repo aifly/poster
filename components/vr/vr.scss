@@ -8,7 +8,6 @@
 
 	.zmiti-vr-bottom {
 		width: 10rem;
-		bottom: 0;
 		@include pos(a);
 		left: 0;
 		z-index: 1;
@@ -72,7 +71,6 @@
 	.zmiti-vr-dog {
 		width: 4rem;
 		@include pos(a);
-		bottom: .3rem;
 		left: 2rem;
 		z-index: 1;
 	}
@@ -84,6 +82,7 @@
 		.zmiti-poster-info-C {
 			width: 8rem;
 			@include pos(a);
+			@include displayBox(horizontal);
 			left: 1rem;
 			height: 100%;
 
@@ -94,24 +93,23 @@
 			}
 
 			.zmiti-poster-dog {
-				top: 3vh;
+				top: -3rem;
+				z-index: -1;
 			}
 
 			.zmiti-poster-yearofdog {
-				top: 12%;
+				top: -.2rem;
 				z-index: 2;
 			}
 
 			.zmiti-wish-C {
-				@include pos(a);
-				bottom: 0;
+				top: .5rem;
+				@include pos(r);
 				left: 0;
 				z-index: 1;
-				height: 65vh;
 				width: 100%;
 
 				&>img {
-					@include pos(a);
 					bottom: 0;
 					left: 0;
 				}
@@ -121,7 +119,7 @@
 
 			.zmiti-poster-form {
 				@include pos(a);
-				top: 2.2rem;
+				top: .8rem;
 				width: 80%;
 				left: 10%;
 				text-align: center;
@@ -153,6 +151,7 @@
 						margin-top: -.2rem;
 						@include br(.1rem);
 						outline: none;
+						font-size: .4rem;
 					}
 
 				}
@@ -161,6 +160,7 @@
 					height: 2rem;
 
 					textarea {
+						font-size: .4rem;
 						border: 1px solid #a80318;
 						@include br(.1rem);
 						box-sizing: border-box;
@@ -178,6 +178,7 @@
 						bottom: .1rem;
 						z-index: 10;
 						font-size: .36rem;
+						color: #fb0000;
 					}
 
 				}
@@ -205,18 +206,21 @@
 	}
 
 	.zmiti-tip {
-		@include pos(f);
+		@include pos(a);
 		z-index: 100;
 		left: 0;
 		top: 0;
 		width: 100%;
 		height: 100%;
 		background: rgba(0, 0, 0, .3);
-		@include displayBox(horizontal);
 
 		img {
 			display: block;
 			width: 7rem;
+			@include pos(a);
+			left: 50%;
+			top: 50%;
+			@include transform(translate(-50%, -50%));
 		}
 
 	}
@@ -228,5 +232,5 @@
 }
 
 .zmiti-play {
-	top: 1.5rem !important;
+	//top: 1.5rem !important;
 }

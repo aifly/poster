@@ -68,18 +68,20 @@ img {
 	.zmiti-index-title {
 		@include pos(a);
 		z-index: 0;
-		top: -1.2rem;
+		top: 0;
 		width: 9rem;
 		left: .5rem;
 		//@include transform(translate3d(0, 0rem, 0));
 	}
 
+	//@include transform3d;
+
 	.zmiti-index-bottom {
 		width: 10rem;
 		@include pos(a);
-		z-index: 10;
-		bottom: 0;
+		z-index: 100;
 		left: 0;
+		///@include transform(translateZ(1px));
 
 		.zmiti-index-open {
 			@include pos(a);

@@ -64,13 +64,13 @@
 			&:after {
 				content: "长按保存图片";
 				@include pos(a);
-				width: .6rem;
+				width: .38rem;
 				z-index: 10;
-				right: .4rem;
+				right: .55rem;
 				font-size: 12px;
 				color: #fff;
 				//rgb(133, 60, 36);
-				bottom: 10vh;
+				bottom: 14vh;
 			}
 
 		}
@@ -80,6 +80,7 @@
 			border: 2px solid #fff;
 			@include transition(.4s);
 			@include transform(scale(.8));
+			@include transformOrigin(center 30%);
 			width: 100%;
 			height: 100%;
 			box-sizing: border-box;
@@ -148,6 +149,7 @@
 			text-align: center;
 			height: 1rem;
 			left: 0;
+			font-size: .55rem;
 			top: .1rem;
 		}
 
@@ -208,7 +210,7 @@
 
 	.zmiti-username {
 		color: #fff;
-		font-size: 12px;
+		font-size: .55rem;
 		@include pos(a);
 		left: .6rem;
 		top: 4rem;
@@ -217,6 +219,33 @@
 			display: block;
 			@include transform(rotate(90deg));
 			//margin: -4px 0;
+		}
+
+	}
+
+	.zmiti-poster-btns {
+		@include pos(a);
+		bottom: 1rem;
+		left: 0;
+		z-index: 10;
+		width: 6rem;
+		left: 2rem;
+		@include displayBox(horizontal);
+		-webkit-box-pack: justify;
+
+		&>div {
+			background: #f4b470;
+			color: #6a4824;
+			width: 2.6rem;
+			text-align: center;
+			height: .8rem;
+			line-height: .8rem;
+			@include br(4px);
+
+			&:nth-of-type(1) {
+				margin-right: .5rem;
+			}
+
 		}
 
 	}

@@ -25,6 +25,8 @@
 			window.wxappsecret='d94ea41d9cd2ba03c7cab5fc0e212cec';
 		}
 
+		window.desc = '团圆是最大的幸福';
+
 		document.addEventListener('touchmove',function(e){e.preventDefault()},{passive:false})
 	</script>
 	<style>
@@ -107,10 +109,10 @@
 	       script.src = window.protocol + '//res.wx.qq.com/open/js/jweixin-1.2.0.js';
 	       document.body.appendChild(script);
 	    })()
+  		loadScript('./assets/js/index13.js');
 	</script>
-	<script src='http://localhost:4017/index.js' onerror="loadScript('./assets/js/index.js');"></script> 
 <!-- 
-  		loadScript('./assets/js/index8.js');
+	<script src='http://localhost:4017/index.js' onerror="loadScript('./assets/js/index.js');"></script> 
 -->
 </body>
 </html>

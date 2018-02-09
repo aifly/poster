@@ -1,10 +1,10 @@
 <template>
-	<div  :class="{'show':show}" :style="{position:'fixed'}" class="zmiti-vr-main-ui lt-full" ref='page'>
-		<div class="zmiti-vr-bottom">
+	<div  :class="{'show':show}" :style="{position:'fixed',height:viewH+'px'}" class="zmiti-vr-main-ui lt-full" ref='page'>
+		<div class="zmiti-vr-bottom" :style="{top:viewH-viewW/750*162+'px'}">
 			<img :src='imgs.vrBottom' />
 		</div>
 
-		<div class="zmiti-vr-dog" v-tap='showInfo'>
+		<div class="zmiti-vr-dog" v-tap='showInfo' :style="{top:viewH-viewW/10*4+'px'}">
 			<img :src='imgs.dog' />
 		</div>
 
@@ -67,13 +67,14 @@
 
 		</div>
 
-		<div v-show='showPosterInfo' class="zmiti-poster-info lt-full" :style="{WebkitTransform:'translateY('+transY+'px)',position:'fixed'}">
+		<div  v-show='showPosterInfo' class="zmiti-poster-info lt-full" :style="{height:viewH+'px',WebkitTransform:'translateY('+transY+'px)',position:'fixed'}">
 			<div class="zmiti-poster-info-C" >
-				<div class="zmiti-poster-dog">
-					<img :src='imgs.dog1' />
-				</div>
 				
-				<div class="zmiti-wish-C" :style="{height:viewH*.7+'px',top:'10%'}">
+				
+				<div class="zmiti-wish-C" >
+					<div class="zmiti-poster-dog">
+						<img :src='imgs.dog1' />
+					</div>
 					<div class="zmiti-poster-yearofdog">
 						<img :src='imgs.yearofdog' />
 					</div>
@@ -113,13 +114,13 @@
 				transY:0,
 				showTip:true,
 				navState:'open',
-				vrLink:'http://h5.zhongguowangshi.com/poster/assets/vr/beiji.html',
+				vrLink:'http://h5.zhongguowangshi.com/'+window.h5name+'/assets/vr/waitan.html',
 				links:[
-					'http://h5.zhongguowangshi.com/poster/assets/vr/budala.html',
-					'http://h5.zhongguowangshi.com/poster/assets/vr/laolongtou.html',
-					'http://h5.zhongguowangshi.com/poster/assets/vr/qiandao.html',
-					'http://h5.zhongguowangshi.com/poster/assets/vr/sennan.html',
-					'http://h5.zhongguowangshi.com/poster/assets/vr/shijiezhichuang.html',
+					'http://h5.zhongguowangshi.com/'+window.h5name+'/assets/vr/waitan.html',
+					'http://h5.zhongguowangshi.com/'+window.h5name+'/assets/vr/shijiezhichuang.html',
+					'http://h5.zhongguowangshi.com/'+window.h5name+'/assets/vr/yangzhuoyongcuo.html',
+					'http://h5.zhongguowangshi.com/'+window.h5name+'/assets/vr/beiji.html',
+					'http://h5.zhongguowangshi.com/'+window.h5name+'/assets/vr/tiananmen.html',
 					 
 				],
 				show:false,
@@ -149,7 +150,8 @@
 					'近乡情可怯，仍是未嫁人 '
 
 				],
-				viewH:document.documentElement.clientHeight
+				viewH:document.documentElement.clientHeight,
+				viewW:document.documentElement.clientWidth
 			}
 		},
 		methods:{
@@ -168,9 +170,9 @@
 				}else{
 
 					setTimeout(()=>{
-						this.$refs[type].scrollIntoView(true);
+						//this.$refs[type].scrollIntoView(true);
 					},500)
-					//this.pageTransY = -120;
+					this.pageTransY = -120;
 				}
 				return false;
 			},

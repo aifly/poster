@@ -1,5 +1,5 @@
 var imgs = {
-	title: './assets/images/title.png',
+	title: './assets/images/title1.png',
 	play: './assets/images/play.png',
 	paused: './assets/images/paused.png',
 	logo: './assets/images/logo.png',

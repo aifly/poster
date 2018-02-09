@@ -13,7 +13,7 @@
 			</div>
 		</transition>
 
-		<div class="zmiti-index-bottom">
+		<div class="zmiti-index-bottom" :style="{height:579*viewW/750+'px',top:viewH -579*viewW/750+'px'}">
 			<transition name='open'>
 				<div v-tap='entryMain' class="zmiti-index-open" v-if='showOpen'>
 					<img :src='imgs.open'/>

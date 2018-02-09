@@ -1,5 +1,5 @@
 <template>
-	<div :class="{'show':show}"    class="zmiti-poster-main-ui lt-full" ref='page'>
+	<div :class="{'show':show}"    class="zmiti-poster-main-ui lt-full" ref='page' :style="{height:viewH+'px'}">
 		
 		<div class="zmiti-share-page lt-full" :style="posterList[index].pageStyle">
 			<div class="zmiti-logo" :style="{color:posterList[index].logoColor}">
@@ -134,6 +134,11 @@
 			<img :src="imgs.arrow" />
 		</div>
 
+		<div v-show='showText' class="zmiti-poster-btns">
+			<div v-tap='redo'>我也要制作</div>
+			<div v-tap='share'>分享</div>
+		</div>
+
 		<audio src='./assets/music/photo.mp3' ref='audio' preload='auto'></audio>
 	</div>
 </template>
@@ -155,8 +160,9 @@
 				wish:'',
 				show:false,
 				showText:false,
+				viewH:document.documentElement.clientHeight,
 				showMask:false,
-				index:1,
+				index: Math.random()*3|0+1,
 				posterList,
 				src:'',//截图地址
 			}
@@ -166,6 +172,12 @@
 				setTimeout(()=>{
 					this.showText = true;
 				},500)
+			},
+			share(){
+				this.showMask = true
+			},
+			redo(){
+				window.location.href = window.location.href.split("?")[0];
 			}
 		},
 		components:{
@@ -192,8 +204,8 @@
 							onrendered: function(canvas) {
 						        var url = canvas.toDataURL();
 						        $.ajax({
-						          url: window.protocol+'//api.zmiti.com/v2/share/base64_image/',
-						           //url: window.protocol+'//h5.zhongguowangshi.com/interface/public/index.php?s=v2/share/base64_image',
+						          //url: window.protocol+'//api.zmiti.com/v2/share/base64_image/',
+						          url:window.protocol+'//bluesky.zmiti.com/v2/share/base64_image/',
 						          type: 'post',
 						          data: {
 						            setcontents: url,
@@ -214,6 +226,21 @@
 											setTimeout(()=>{
 												s.showText = true;
 											},500)
+
+
+											/*$.ajax({
+												url: window.protocol+'//bluesky.zmiti.com/v2/share/delete_file/',
+
+												type:'post',
+												data:{
+													filepath:src,
+													pathtype:1
+												},
+												success(data){
+													console.log(data);
+												}
+											})*/
+											
 										}
 										img.src = src;
 
@@ -223,7 +250,7 @@
 										url = zmitiUtil.changeURLPar(url,'wish',encodeURI(wish));
 										url = zmitiUtil.changeURLPar(url,'src',src);
 
-										zmitiUtil.wxConfig(document.title,document.title,url);
+										zmitiUtil.wxConfig(document.title,window.desc,url);
 
 										/*s.wxConfig('我的新年满意度是【'+(s.avg|0)+'】，击败了'+(scale)+'%的网友','听说微笑可以增加颜值，你准备好了吗',URI);  */      
 						            }
@@ -244,6 +271,8 @@
 				}
 
 			});
+			 
+
 
 			obserable.on('showPoster',()=>{
 				this.show = true;
